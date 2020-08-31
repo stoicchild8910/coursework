@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/coursework/movieweb/static/css/main.5f361e03.chunk.css",
+    "main.js": "/coursework/movieweb/static/js/main.b62e6342.chunk.js",
+    "main.js.map": "/coursework/movieweb/static/js/main.b62e6342.chunk.js.map",
+    "runtime-main.js": "/coursework/movieweb/static/js/runtime-main.180d03a5.js",
+    "runtime-main.js.map": "/coursework/movieweb/static/js/runtime-main.180d03a5.js.map",
+    "static/js/2.f6c5811a.chunk.js": "/coursework/movieweb/static/js/2.f6c5811a.chunk.js",
+    "static/js/2.f6c5811a.chunk.js.map": "/coursework/movieweb/static/js/2.f6c5811a.chunk.js.map",
+    "index.html": "/coursework/movieweb/index.html",
+    "precache-manifest.12c03a02f002e062d25272a1552039d6.js": "/coursework/movieweb/precache-manifest.12c03a02f002e062d25272a1552039d6.js",
+    "service-worker.js": "/coursework/movieweb/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/coursework/movieweb/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.f6c5811a.chunk.js.LICENSE.txt": "/coursework/movieweb/static/js/2.f6c5811a.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/coursework/movieweb/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.180d03a5.js",
+    "static/js/2.f6c5811a.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.b62e6342.chunk.js"
+  ]
+}

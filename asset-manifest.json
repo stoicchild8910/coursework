@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/coursework/movieweb/static/css/main.5f361e03.chunk.css",
-    "main.js": "/coursework/movieweb/static/js/main.b62e6342.chunk.js",
-    "main.js.map": "/coursework/movieweb/static/js/main.b62e6342.chunk.js.map",
-    "runtime-main.js": "/coursework/movieweb/static/js/runtime-main.180d03a5.js",
-    "runtime-main.js.map": "/coursework/movieweb/static/js/runtime-main.180d03a5.js.map",
-    "static/js/2.f6c5811a.chunk.js": "/coursework/movieweb/static/js/2.f6c5811a.chunk.js",
-    "static/js/2.f6c5811a.chunk.js.map": "/coursework/movieweb/static/js/2.f6c5811a.chunk.js.map",
-    "index.html": "/coursework/movieweb/index.html",
-    "precache-manifest.12c03a02f002e062d25272a1552039d6.js": "/coursework/movieweb/precache-manifest.12c03a02f002e062d25272a1552039d6.js",
-    "service-worker.js": "/coursework/movieweb/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/coursework/movieweb/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.f6c5811a.chunk.js.LICENSE.txt": "/coursework/movieweb/static/js/2.f6c5811a.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/coursework/movieweb/static/media/logo.5d5d9eef.svg"
+    "main.css": "/coursework/static/css/main.672a5149.chunk.css",
+    "main.js": "/coursework/static/js/main.b62fa9db.chunk.js",
+    "main.js.map": "/coursework/static/js/main.b62fa9db.chunk.js.map",
+    "runtime-main.js": "/coursework/static/js/runtime-main.89670d95.js",
+    "runtime-main.js.map": "/coursework/static/js/runtime-main.89670d95.js.map",
+    "static/js/2.5ebbf113.chunk.js": "/coursework/static/js/2.5ebbf113.chunk.js",
+    "static/js/2.5ebbf113.chunk.js.map": "/coursework/static/js/2.5ebbf113.chunk.js.map",
+    "index.html": "/coursework/index.html",
+    "precache-manifest.8e5b66b7043eeeab0bcaadde4fd0d083.js": "/coursework/precache-manifest.8e5b66b7043eeeab0bcaadde4fd0d083.js",
+    "service-worker.js": "/coursework/service-worker.js",
+    "static/css/main.672a5149.chunk.css.map": "/coursework/static/css/main.672a5149.chunk.css.map",
+    "static/js/2.5ebbf113.chunk.js.LICENSE.txt": "/coursework/static/js/2.5ebbf113.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.180d03a5.js",
-    "static/js/2.f6c5811a.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.b62e6342.chunk.js"
+    "static/js/runtime-main.89670d95.js",
+    "static/js/2.5ebbf113.chunk.js",
+    "static/css/main.672a5149.chunk.css",
+    "static/js/main.b62fa9db.chunk.js"
   ]
 }

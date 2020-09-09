@@ -7,7 +7,7 @@ import Votes from "./Votes";
 import Popularity from "./Popularity";
 import Video from "./Video";
 import { apiImage } from "../api";
-import { trimText } from "../utils";
+import { trimText, formatDate } from "../utils";
 
 const Container = styled.View`
     padding: 0px 10px;
@@ -18,6 +18,7 @@ const Container = styled.View`
 const Data = styled.View`
     margin-left: 20px;
     padding-right: 70px;
+    width: 80%;
 `;
 
 const Title = styled.Text`
@@ -32,6 +33,8 @@ const OverView = styled.Text`
 
 const Date = styled.Text`
     color: white;
+    font-size: 12px;
+    opacity: 0.5;
 `;
 
 const Horizontal = ({ id, 
@@ -48,8 +51,8 @@ const Horizontal = ({ id,
         <Container>
             <Poster url={apiImage(poster)} />
             <Data>
-                <Title>{trimText(title, 20)}</Title>
-                <Date>{date}</Date>
+                <Title>{trimText(title, 15)}</Title>
+                <Date>Release: {formatDate(date)}</Date>
                 <Votes votes={votes} />
                 <Popularity popularity={popularity} />
                 <OverView>{overview.length>90? `${overview.slice(0,90)}...` : overview }</OverView>

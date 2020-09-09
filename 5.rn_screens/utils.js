@@ -5,7 +5,7 @@ export const formatDate = date => {
   const theDate = new Date(date);
   return theDate.toLocaleDateString("ko", {
     day: "numeric",
-    month: "long",
+    month: "numeric",
     year: "numeric"
   });
 };

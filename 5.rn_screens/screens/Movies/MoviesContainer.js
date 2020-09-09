@@ -31,6 +31,7 @@ export default () => {
       popular,
       upcoming,
       nowPlayingError,
+      
       popularError,
       upcomingError,
       loading: false

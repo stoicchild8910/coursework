@@ -42,7 +42,7 @@ export const tvApi = {
     today: () => getAnything("/tv/airing_today"),
     thisWeek: () => getAnything("/tv/on_the_air"),
     topRated: () => getAnything("/tv/top_rated"),
-    popular: () => getAnything("tv/popular"),
+    popular: () => getAnything("/tv/popular"),
     search: (query) => getAnything("/search/tv", { query }),
     show: (id) => getAnything(`/tv/${id}`)
 }

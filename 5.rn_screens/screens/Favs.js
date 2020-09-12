@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AppRegistry, StyleSheet, Text, View } from 'react-native'
 import { movieApi } from "../api";
+import ScrollContianer from "../components/ScrollContainer";
 
 
 export default () => {
@@ -22,10 +23,10 @@ export default () => {
   }, [])
 
   return(
-    <View>
+    <ScrollContianer>
       <Text>
         Hello this is favs page
       </Text>
-    </View>
+    </ScrollContianer>
   );
 };

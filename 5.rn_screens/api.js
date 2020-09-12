@@ -35,7 +35,7 @@ export const movieApi = {
     discover: () => getAnything("/discover/movie"),
     credits: (id) => getAnything(`/movie/${id}/credits`),
     similar: (id) => getAnything(`/movie/${id}/similar`),
-    video: (id) => getAnything(`/movie/${id}/videos`)
+    video: (id) => getAnything(`/movie/${id}/videos`),
 }
 
 export const tvApi = {
@@ -47,4 +47,13 @@ export const tvApi = {
     show: (id) => getAnything(`/tv/${id}`)
 }
 
-export const apiImage = path => `https://image.tmdb.org/t/p/w500${path}`;
+export const apiImage = (
+    path, 
+    defaultPath
+    ) => (
+        path? 
+            `https://image.tmdb.org/t/p/w500${path}` :
+            "https://images.unsplash.com/photo-1577640595159-605ea08d71ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+        );
+
+// export const apiImage = path => `https://image.tmdb.org/t/p/w500${path}`;

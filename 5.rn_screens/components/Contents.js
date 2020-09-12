@@ -6,8 +6,11 @@ import { apiImage } from "../api";
 import Poster from "./Poster";
 import Votes from "./Votes";
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import trimText from "../utils";
 
 const Container = styled.View`
+    margin: 0px 2px;
 `;
 
 const Title = styled.Text`
@@ -17,12 +20,31 @@ const Title = styled.Text`
     margin-bottom: 10px;
 `;
 
-const Contents = ({ key, poster, title, votes }) => {
+const Contents = ({ id, key, poster, title, votes, backgroundImage, overview }) => {
+    const navigation = useNavigation();
+    const goToDetail = () => 
+        navigation.navigate("Detail",{
+            id,
+            key,
+            poster,
+            title,
+            votes,
+            backgroundImage,
+            overview,
+        });
+        // console.log(title);
     return(
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goToDetail}>
             <Container>
-                <Poster url={apiImage(poster)} />
-                <Title>{ title.length>10? `${title.slice(0,10)}..` : title }</Title>
+                {/* <Poster 
+                    url={poster? 
+                        apiImage(poster): 
+                        "https://images.unsplash.com/photo-1577640595159-605ea08d71ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                    }
+                /> */}
+                <Poster url={apiImage(poster, "")} />
+                {/* <Title>{ trimText(title, 5) }</Title> */}
+                <Title>{ title.length>5? `${title.slice(0,5)}..` : title }</Title>
                 <Votes votes={votes} />
             </Container>
         </TouchableOpacity>
@@ -30,10 +52,13 @@ const Contents = ({ key, poster, title, votes }) => {
 };
 
 Contents.propTypes = {
+    id: PropTypes.number.isRequired,
     key: PropTypes.number.isRequired,
     poster: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired,
+    backgroundImage: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired
 };
 
 export default Contents;

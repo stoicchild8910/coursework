@@ -38,7 +38,7 @@ export default() => {
 
     return (
         <Wrapper>
-            <TvPresenter {...tvs}/>
+            <TvPresenter refreshFn={getData} {...tvs}/>
         </Wrapper>
     );
 }

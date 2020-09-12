@@ -32,10 +32,13 @@ const Overview = styled.Text`
 `;
 const TopRatedContainer = styled.View``;
 
-export default ({ loading, popular, topRated }) => {
-    console.log("this is tv presenter page");
+export default ({ loading, popular, topRated, refreshFn }) => {
+    // console.log("this is tv presenter page");
     return(
-        <ScrollContianer loading={loading}>
+        <ScrollContianer 
+            loading={loading}
+            refreshFn={refreshFn}
+        >
             <>
             {/* Popular Tv Show: Horizontal */}
             <HorizontalSlider 
@@ -44,10 +47,13 @@ export default ({ loading, popular, topRated }) => {
                     popular.map(cur => (
                         <Container>
                             <Contents 
-                                key = {cur.id}
-                                poster = {cur.poster_path}
-                                title = {cur.original_name}
-                                votes = {cur.vote_average}
+                                id={cur.id}
+                                key={cur.id}
+                                poster={cur.poster_path}
+                                title={cur.original_name}
+                                votes={cur.vote_average}
+                                backgroundImage={cur.backdrop_path}
+                                overview={cur.overview}
                             />
                             <Country>{cur.origin_country}</Country>
                             <Text>First Aired: </Text>

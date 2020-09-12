@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
+
 import { apiImage } from "../../api";
 import { trimText } from "../../utils";
 import { Dimensions, Image, Text } from "react-native";
+
 import Poster from "../Poster";
-import { TouchableOpacity } from "react-native";
 import Votes from "../Votes";
+
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 const Container = styled.View`
   height: 100%;
@@ -55,7 +59,20 @@ const ButtonText = styled.Text`
   opacity: 0.7;
 `;
 
-const Slide = ({ id, title, backgroundImage, votes, overview, poster }) => (
+const Slide = ({ id, key, title, backgroundImage, votes, overview, poster }) => {
+  const navigation = useNavigation();
+    const goToDetail = () => {
+        navigation.navigate("Detail",{
+            id,
+            key,
+            poster,
+            title,
+            votes,
+            backgroundImage,
+            overview,
+        });
+    };
+  return(
     <Container>
         <BG 
         resizeMode="stretch"
@@ -68,7 +85,7 @@ const Slide = ({ id, title, backgroundImage, votes, overview, poster }) => (
               <Votes votes={votes} />
               <Overview>{overview.length>80? overview.slice(0, 80)+"....":overview}</Overview>
               {/* <Button title="See datails" /> */}
-              <TouchableOpacity>
+              <TouchableOpacity onPress={goToDetail}>
                 <Button>
                   <ButtonText>View details</ButtonText>
                 </Button>
@@ -76,11 +93,13 @@ const Slide = ({ id, title, backgroundImage, votes, overview, poster }) => (
           </Data>
         </Content>
     </Container>
-);
+  );
+};
 
 
 Slide.propTypes = {
     id: PropTypes.number.isRequired,
+    key: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     backgroundImage: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired,

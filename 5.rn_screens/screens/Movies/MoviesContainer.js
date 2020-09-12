@@ -9,6 +9,7 @@ const Wrapper = styled.View`
 `;
 
 export default () => {
+  const [refreshing, setRefreshing] = useState(false);
   // console.log("this is movie container page")
   const [movies, setMovies] = useState({
     nowPlaying: [],
@@ -31,7 +32,6 @@ export default () => {
       popular,
       upcoming,
       nowPlayingError,
-      
       popularError,
       upcomingError,
       loading: false
@@ -44,7 +44,7 @@ export default () => {
 
   return(
     <Wrapper>
-      <MoviesPresenter {...movies} />
+      <MoviesPresenter refreshFn={getData} {...movies} />
     </Wrapper>
   );
 };

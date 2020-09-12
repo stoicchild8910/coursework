@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-// import Detail from "../screens/Detail";
 import Tabs from "./Tabs";
+import Detail from "../screens/Detail";
 import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator();
@@ -22,6 +22,6 @@ export default () => (
     }}
   >
     <Stack.Screen name="Tab" component={Tabs} />
-    {/* <Stack.Screen name="Detail" component={Detail} /> */}
+    <Stack.Screen name="Detail" component={Detail} />
   </Stack.Navigator>
 );

@@ -18,9 +18,7 @@ const SliderContainer = styled.View`
     height: ${HEIGHT/3}px;
 `;
 
-const Container = styled.View`
-
-`;
+const Container = styled.View``;
 
 const BigSlideContainer = styled.View`
     width: 100%;
@@ -31,9 +29,10 @@ const BigSlideContainer = styled.View`
 const UpcomingContainer = styled.View`
 `;
 
-export default ({ loading, nowPlaying, popular, upcoming }) => {
+export default ({ refreshFn, loading, nowPlaying, popular, upcoming }) => {
+
     return (
-        <ScrollContainer loading={loading} >
+        <ScrollContainer refreshFn={refreshFn} loading={loading} >
             <>
             <SliderContainer>
                 <Swiper controlsEnabled={false} loop timeout={3} >
@@ -55,12 +54,14 @@ export default ({ loading, nowPlaying, popular, upcoming }) => {
                     title={"Popular Moives"}
                     children={
                         popular.map(cur=>(
-                            <Contents 
+                            <Contents
+                                id={cur.id} 
                                 key={cur.id}
-                                id={cur.id}
                                 poster={cur.poster_path}
                                 title={cur.original_title}
                                 votes={cur.vote_average}
+                                backgroundImage={cur.backdrop_path}
+                                overview={cur.overview}
                             />
                         ))
                     } />

@@ -5,7 +5,6 @@ import { Dimensions, ActivityIndicator, View, ScrollView } from "react-native";
 import Slide from "../../components/Movies/Slide";
 import BarTitle from "../../components/BarTitle";
 import Contents from "../../components/Contents";
-import { movieApi } from "../../api";
 import Horizontal from "../../components/Horizontal"; 
 import ScrollContainer from "../../components/ScrollContainer";
 import HorizontalSlider from "../../components/HorizontalSlider"
@@ -30,7 +29,7 @@ const UpcomingContainer = styled.View`
 `;
 
 export default ({ refreshFn, loading, nowPlaying, popular, upcoming }) => {
-
+    console.log("nowPlaying", nowPlaying);
     return (
         <ScrollContainer refreshFn={refreshFn} loading={loading} >
             <>

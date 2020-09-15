@@ -40,7 +40,8 @@ const Date = styled.Text`
     opacity: 0.5;
 `;
 
-const Horizontal = ({ 
+const Horizontal = ({
+    isTv=false,
     id, 
     key, 
     poster, 
@@ -55,6 +56,7 @@ const Horizontal = ({
     const navigation = useNavigation();
     const goToDetail = () => {
         navigation.navigate("Detail", {
+            isTv,
             id,
             key,
             title,

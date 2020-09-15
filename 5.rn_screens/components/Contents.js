@@ -20,10 +20,11 @@ const Title = styled.Text`
     margin-bottom: 10px;
 `;
 
-const Contents = ({ id, key, poster, title, votes, backgroundImage, overview }) => {
+const Contents = ({ isTv=false, id, key, poster, title, votes, backgroundImage, overview }) => {
     const navigation = useNavigation();
     const goToDetail = () => 
         navigation.navigate("Detail",{
+            isTv,
             id,
             key,
             poster,
@@ -36,12 +37,6 @@ const Contents = ({ id, key, poster, title, votes, backgroundImage, overview }) 
     return(
         <TouchableOpacity onPress={goToDetail}>
             <Container>
-                {/* <Poster 
-                    url={poster? 
-                        apiImage(poster): 
-                        "https://images.unsplash.com/photo-1577640595159-605ea08d71ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                    }
-                /> */}
                 <Poster url={apiImage(poster, "")} />
                 {/* <Title>{ trimText(title, 5) }</Title> */}
                 <Title>{ title.length>5? `${title.slice(0,5)}..` : title }</Title>

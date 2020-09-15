@@ -11,21 +11,6 @@ const ScrollContianer = ({ loading, children, contentContainerStyle, refreshFn }
         setRefreshing(false);
     }
 
-    /*
-    const onRefresh = useCallback(
-        () => {
-            setRefreshing(true);
-            wait(2000).then(()=>setRefreshing(false));
-        },[]
-    );
-
-    const wait = (timeout) => {
-        return new Promise(resolve => {
-            setTimeout(resolve, timeout);
-        });
-    }
-    */
-
     return(
     <ScrollView
         style={{ backgroundColor: "black" }}

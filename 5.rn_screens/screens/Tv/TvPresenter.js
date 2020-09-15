@@ -47,6 +47,7 @@ export default ({ loading, popular, topRated, refreshFn }) => {
                     popular.map(cur => (
                         <Container>
                             <Contents 
+                                isTv={true}
                                 id={cur.id}
                                 key={cur.id}
                                 poster={cur.poster_path}
@@ -69,6 +70,7 @@ export default ({ loading, popular, topRated, refreshFn }) => {
                     children = {
                         topRated.map(cur => (
                             <Horizontal 
+                                isTv={true}
                                 key={cur.id}
                                 id={cur.id}
                                 poster={cur.poster_path}

@@ -66,26 +66,26 @@ const DataValue = styled.Text`
   font-weight: 500;
 `;
 
-export default ({ movies, loading }) => {
-  // console.log(overview);
+export default ({ results, loading }) => {
+  // console.log(results.backgroundImage);
   return(
     <ScrollContianer loading={false}>
       <>
       <Header>
-        <BG source={{ uri: apiImage(movies.backgroundImage, "") }} />
+        <BG source={{ uri: apiImage(results.backgroundImage, "") }} />
         <Container>
-          <Poster url={apiImage(movies.poster, "")} />
+          <Poster url={apiImage(results.poster, "")} />
           <Info>
-            <Title>{trimText(movies.title, 15)}</Title>
-            {movies.votes && <Votes votes={movies.votes} />}
+            <Title>{trimText(results.title, 15)}</Title>
+            {results.votes && <Votes votes={results.votes} />}
           </Info>
         </Container>
       </Header>
       <Data>
-        {movies.overview && (
+        {results.overview && (
         <>
         <DataName>[ Synopsis ]</DataName>
-        <DataValue>{movies.overview}</DataValue>
+        <DataValue>{results.overview}</DataValue>
         </>
         )}
         {loading && (

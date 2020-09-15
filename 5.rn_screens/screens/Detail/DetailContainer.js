@@ -6,7 +6,7 @@ export default ({
     navigation,
     route : {
         params: {
-            idTv,
+            isTv,
             id,
             key,
             poster,
@@ -18,40 +18,43 @@ export default ({
     }
 }) => {
     const [loading, setLoading] = useState(true);
-    const [results, setResults] = useState({
-        id,
-        title,
-        backgroundImage,
-        poster,
-        overview,
-        votes
-    });
-
-    const getData = async() =>{
-        const [getResults, getResultsError] = await movieApi.movie(id);
-        if( isTv ){
-            const [getResults, getResultsError] = await tvApi.show(id);
-        } else {
-            const [getResults, getResultsError] = await movieApi.movie(id);
-        }
-        setResults({
-            ...getResults,
+    const [detail, setDetail] = useState({
+        loading:true,
+        results: {
             id,
             title,
             backgroundImage,
             poster,
             overview,
-            votes
-        });
-        setLoading(false);
+            votes: 99
+        }
+        
+    });
+
+    const getData = async() =>{
+            const [getDetail, getDetailError] = isTv? await tvApi.show(id) : await movieApi.movie(id);
+            console.log(detail);
+            setDetail({
+                loading: false,
+                results: {
+                    ...getDetail,
+                    id: getDetail.id,
+                    title: getDetail.title || getDetail.name,
+                    backgroundImage: getDetail.backdrop_path,
+                    poster: getDetail.poster_path,
+                    overview: getDetail.overview,
+                    votes: 15
+                }
+            });
+        console.log(detail);
     };
 
     useEffect(() => {
         getData();
-      }, [id]);
+    }, [id]);
     React.useLayoutEffect(() => {
         navigation.setOptions({ title });
     });
 
-    return(<DetailPresenter movies={results} loading={loading}/>);
+    return(<DetailPresenter {...detail}/>);
 };
